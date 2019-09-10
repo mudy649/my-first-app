@@ -1,0 +1,39 @@
+
+<div>    
+        <mat-form-field class="example-full-width">
+              <input [(ngModel)]="home.employee_name"  name="firstname" matInput placeholder="Name" >
+            </mat-form-field>
+</div>
+<div>    
+        <mat-form-field class="example-full-width">
+              <input  [(ngModel)]="home.employee_salary"  name="lastname" matInput placeholder="Salary" >
+            </mat-form-field>
+ </div>
+ <div>    
+        <mat-form-field class="example-full-width">
+              <input  [(ngModel)]="home.employee_age"  name="email" matInput placeholder="Age" >
+            </mat-form-field>
+   </div>
+  
+
+<button  mat-raised-button color="primary" (click)="TestClick()">{{title}}</button>
+ 
+
+ <div>
+     <table align="center" border="1">
+         <tr>
+             <td>Employee Name</td>
+             <td>Employee Salary</td>
+             <td>Employee Age</td>
+             <td>Delete</td>
+             <td>Edit</td>
+         </tr>
+         <tr *ngFor= "let obj of homearray ; let i = index">
+                <td>{{obj.employee_name}}</td>
+                <td>{{obj.employee_salary}}</td>
+                <td>{{obj.employee_age}}</td>
+                <td><button mat-raised-button color="warn" (click)="delete(obj.id)" >Delete</button></td>
+                <td><button mat-raised-button color="accent" (click)="update(obj,i)" >Edit</button></td>
+            </tr>
+     </table>
+ </div> 
